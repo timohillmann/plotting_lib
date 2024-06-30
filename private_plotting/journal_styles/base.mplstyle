@@ -1,0 +1,29 @@
+## overwrite some of the default settings of matpliotlib.
+
+pdf.fonttype: 42
+ps.fonttype: 42
+
+axes.linewidth: 1.0
+axes.xmargin: 0.00 ## default is 0.05
+patch.linewidth: 1.0
+lines.linewidth: 1.0
+lines.markersize: 5,
+
+legend.framealpha: 0.0  ## default: 0.8
+legend.handlelength: 1.5  ## default: 2
+legend.borderaxespad: 0.3
+legend.labelspacing: 0.2  # default: 0.5
+legend.fancybox: False
+xtick.top: True
+xtick.bottom: True
+ytick.left: True
+ytick:right: True
+xtick.direction: "in"  ## default: "out"
+ytick.direction: "in"  ## default: "out"
+xtick.major.pad: 2  ## default: 3.5 
+ytick.major.pad: 2  ## defualt: 3.5 
+ytick.minor.pad: 1.8
+savefig.dpi: 600  ## default: 100 dpi
+errorbar.capsize: 3  # as in the classic version
+
+

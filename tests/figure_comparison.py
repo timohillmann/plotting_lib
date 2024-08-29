@@ -20,7 +20,7 @@ for style in ["APS", "Nature", "Quantum"]:
     ax.legend()
     pl.add_label(ax)
 
-    print(pl.update_settings.current_style)
+    pl.tight_layout()
 
     pl.save_fig(fig, f"figure_comparison_{style.lower()}.pdf")
 
@@ -35,3 +35,4 @@ for style in ["APS", "Nature", "Quantum"]:
         # axis.set_ylabel(r"$y$")
 
     pl.add_label(ax, x0=-0.06, y0=0.87)
+    pl.tight_layout()

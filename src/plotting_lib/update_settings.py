@@ -53,6 +53,9 @@ def update_settings(
 
     """
 
+    # make style available in the module through self.current_style
+    update_settings.current_style = style.lower()
+
     if not latex_preamble:
         from .latex_preamble import latex_preamble
 
@@ -71,7 +74,9 @@ def update_settings(
         plt.rcParams["axes.prop_cycle"] = mpl.cycler(color=colors_rsb)
 
     # find all available styles in the styles folder
-    available_styles = os.listdir(os.path.join(os.path.dirname(__file__), "styles"))
+    available_styles = os.listdir(
+        os.path.join(os.path.dirname(__file__), "journal_styles")
+    )
     available_styles = [
         x.split(".")[0] for x in available_styles if x.endswith(".mplstyle")
     ]
@@ -81,9 +86,13 @@ def update_settings(
             f"Style {style} not available. Available styles are: {available_styles}. Using default style 'aps'.",
         )
 
-    base_style = os.path.join(os.path.dirname(__file__), "styles", "base.mplstyle")
+    base_style = os.path.join(
+        os.path.dirname(__file__), "journal_styles", "base.mplstyle"
+    )
     style = style.lower()
-    style = os.path.join(os.path.dirname(__file__), "styles", f"{style}.mplstyle")
+    style = os.path.join(
+        os.path.dirname(__file__), "journal_styles", f"{style}.mplstyle"
+    )
     plt.style.use([base_style, style])
 
     if settings:

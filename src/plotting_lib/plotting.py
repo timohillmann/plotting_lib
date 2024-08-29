@@ -5,6 +5,7 @@ from matplotlib.offsetbox import AnchoredText
 import matplotlib.legend as mlegend
 from matplotlib.patches import Rectangle
 import numpy as np
+from .update_settings import update_settings
 
 
 def edge_change(cs, cbar=None):
@@ -149,7 +150,7 @@ def text_box(
 
 
 def create_fig(
-    scale: Union[tuple, float],
+    scale: Union[tuple, float] = 1.0,
     single_col: bool = False,
     width: Optional[float] = None,
     height: Optional[float] = None,
@@ -432,7 +433,10 @@ def add_label(ax, text="(a)", x0=None, y0=None, **kwargs):
     """
 
     if isinstance(ax, np.ndarray):
-        abc = [f"({letter})" for letter in "abcdefghijklmnopqrstuvwxyz"]
+        if not update_settings.current_style == "nature":
+            abc = [f"({letter})" for letter in "abcdefghijklmnopqrstuvwxyz"]
+        else:
+            abc = [f"{letter}" for letter in "abcdefghijklmnopqrstuvwxyz"]
 
         f = ax.flat[0].get_figure()
         if y0 is None:
@@ -452,6 +456,7 @@ def add_label(ax, text="(a)", x0=None, y0=None, **kwargs):
             )
     else:
         fig = ax.get_figure()
+        text = text.strip("()") if update_settings.current_style == "nature" else text
         if x0 is None:
             x0 = fig.subplotpars.left
         if y0 is None:
@@ -465,6 +470,7 @@ def add_label(ax, text="(a)", x0=None, y0=None, **kwargs):
                 weight="bold",
                 fontsize=plt.rcParams["font.size"],
                 va="top",
+                # ha="center",
                 **kwargs,
             )
         else:
@@ -634,3 +640,25 @@ def plot_marker_style(
         linestyle=ls,
         marker=marker,
     )
+
+
+def save_fig(fig, filename, **kwargs):
+    """
+    Save figure with a specific filename.
+
+    Parameters
+    ----------
+    fig : matplotlib.figure.Figure
+        Figure instance.
+    filename : str
+        Filename.
+    **kwargs : dict
+        Additional keyword arguments.
+
+    Returns
+    -------
+    None.
+
+    """
+    fig.savefig(filename, **kwargs)
+    return

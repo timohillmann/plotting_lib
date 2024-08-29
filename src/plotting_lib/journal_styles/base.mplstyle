@@ -7,7 +7,7 @@ axes.linewidth: 1.0
 axes.xmargin: 0.00 ## default is 0.05
 patch.linewidth: 1.0
 lines.linewidth: 1.0
-lines.markersize: 5,
+lines.markersize: 5.0
 
 legend.framealpha: 0.0  ## default: 0.8
 legend.handlelength: 1.5  ## default: 2
@@ -17,12 +17,14 @@ legend.fancybox: False
 xtick.top: True
 xtick.bottom: True
 ytick.left: True
-ytick:right: True
+ytick.right: True
 xtick.direction: "in"  ## default: "out"
 ytick.direction: "in"  ## default: "out"
 xtick.major.pad: 2  ## default: 3.5 
 ytick.major.pad: 2  ## defualt: 3.5 
 ytick.minor.pad: 1.8
+xtick.minor.visible: True
+ytick.minor.visible: True
 savefig.dpi: 600  ## default: 100 dpi
 errorbar.capsize: 3  # as in the classic version
 

@@ -9,4 +9,6 @@ latex_preamble = r"""
                     \usepackage{amssymb}
                     \usepackage{helvet}
                     \usepackage{stmaryrd}
+                    \usepackage{sansmath}
+                    \sansmath
                      """

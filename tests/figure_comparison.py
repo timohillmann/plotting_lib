@@ -23,3 +23,15 @@ for style in ["APS", "Nature", "Quantum"]:
     print(pl.update_settings.current_style)
 
     pl.save_fig(fig, f"figure_comparison_{style.lower()}.pdf")
+
+
+for style in ["APS", "Nature", "Quantum"]:
+    pl.update_settings(usetex=True, style=style, colors=pl.colors_rsb)
+
+    fig, ax = pl.create_fig(ncols=2, sharey=True, single_col=True)
+    for axis in ax:
+        axis.plot(x, -y)
+        axis.set_xlabel(r"$x$")
+        # axis.set_ylabel(r"$y$")
+
+    pl.add_label(ax, x0=-0.06, y0=0.87)

@@ -2,6 +2,8 @@ import numpy as np
 import plotting_lib as pl
 import matplotlib.pyplot as plt
 
+from plotting_lib.plotting import plot_marker_style
+
 
 for style in ["APS", "Nature", "Quantum"]:
     pl.update_settings(usetex=True, style=style, colors=pl.colors_rsb)
@@ -14,6 +16,7 @@ for style in ["APS", "Nature", "Quantum"]:
 
     # Plot
     ax.plot(x, y, label=r"$\sin(x)$")
+    ax.plot(x, y, **plot_marker_style(color="C1", ls="None", marker="s"), markevery=10)
 
     ax.set_xlabel(r"$x$")
     ax.set_ylabel(r"$y$")

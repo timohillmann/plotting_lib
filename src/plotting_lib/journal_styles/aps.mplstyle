@@ -1,4 +1,4 @@
-figure.figsize : 3.375, 1.593
+figure.figsize : 3.375, 2.085
 axes.labelsize: 9
 font.size: 9
 legend.fontsize: 9

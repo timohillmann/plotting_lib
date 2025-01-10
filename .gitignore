@@ -11,3 +11,7 @@
 # virtual environment
 venv/*
 build/*
+
+
+# scratch folders
+scratch/*

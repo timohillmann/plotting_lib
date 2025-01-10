@@ -301,14 +301,9 @@ def tablelegend(
     """
 
     # obtain handles and lables from ax.legend
-    handles, labels, extra_args, kwargs = mlegend._parse_legend_args(
-        [ax], *args, **kwargs
-    )
+    handles, labels, kwargs = mlegend._parse_legend_args([ax], *args, **kwargs)
     if sort_idx:
         handles = [handles[i] for i in sort_idx]
-
-    if len(extra_args):
-        raise TypeError("legend only accepts two non-keyword arguments")
 
     if col_labels is None and row_labels is None:
         ax.legend_ = mlegend.Legend(ax, handles, labels, **kwargs)
@@ -317,7 +312,6 @@ def tablelegend(
 
     # modifications for table legend
     else:
-        ncol = kwargs.pop("ncol")
         handletextpad = kwargs.pop("handletextpad", 0 if col_labels is None else -1.7)
         title_label = [title_label]
 

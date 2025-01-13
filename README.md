@@ -12,6 +12,6 @@ pip install .
 
 ## Styles
 The library comes with a few built-in styles that can be used to customize the appearance of the plots. The available styles are:
-    * 'aps': A style to represent the size and font requirements for the APS journal family.
-    * 'nature': A style to represent the size and font requirements for the Nature journal family.
-    * 'quantum': A style to represent the size and font requirements of the Quantum journal.
+- 'aps': A style to represent the size and font requirements for the APS journal family.
+- 'nature': A style to represent the size and font requirements for the Nature journal family.
+- 'quantum': A style to represent the size and font requirements of the Quantum journal.

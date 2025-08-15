@@ -1,6 +1,5 @@
 figure.figsize : 3.220, 1.990
 axes.labelsize: 9
-axes.titlesize: 9
 font.size: 9
 legend.fontsize: 9
 xtick.labelsize: 9
